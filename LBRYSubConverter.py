@@ -1,11 +1,13 @@
-from bs4 import BeautifulSoup
-import requests
 import os
+import requests
 import json
+
+from bs4 import BeautifulSoup
 
 
 fileToOpen = 'subscription_manager'
 saveFileName = 'LBRY_Subscriptions.txt'
+
 if os.path.exists(saveFileName):
     append_write = 'a'
 else:
@@ -33,13 +35,17 @@ parsed_json = json.loads(resp.text)
 datas = parsed_json["data"]
 channels = datas["channels"]
 print ("channels %s" % json.dumps(channels))
+
 for tempchannels in channels:
     if not channels[tempchannels] is None :
         print ("lbry://%s" % channels[tempchannels])
         writeLbrySubs.write("lbry://"+channels[tempchannels] + '\n')
+        
 writeLbrySubs.close()
 count = 0
+
 with open(saveFileName, 'r') as f:
     for line in f:
         count += 1
+        
 print ("Total number of YouTube channels are availible on LBRY: %s" % count)
