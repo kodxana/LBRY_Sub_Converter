@@ -1,2 +1,2 @@
-# LBRY_Sub_Converter
+# LBRY Sub Converter
 Convert your YouTube subscriptions to LBRY
