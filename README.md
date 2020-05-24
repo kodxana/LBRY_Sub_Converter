@@ -9,6 +9,9 @@ python LBRYSubConverter.py
 
 requires a YouTube "subscription_manager" file to be in same directory
 
+a download link for YouTube "subscription_manager" can be found at the bottom of this page: https://www.youtube.com/subscription_manager
+https://media.discordapp.net/attachments/706154088890368060/714173382345621514/unknown.png
+
 will output a "LBRY_Subscriptions.txt" file containing anyone that is on LBRY that you follow on Youtube.
 
 you can also run any released binary.
