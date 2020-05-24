@@ -3,17 +3,15 @@ import requests
 import os
 import json
 
-if os.name == 'nt':
-    fileToOpen = 'subscription_manager.xml'
-else:
-    fileToOpen = 'subscription_manager'
+
+fileToOpen = 'subscription_manager'
 saveFileName = 'LBRY_Subscriptions.txt'
 if os.path.exists(saveFileName):
     append_write = 'a'
 else:
     append_write = 'w'
 writeLbrySubs = open(saveFileName,append_write)
-with open(fileToOpen) as f:
+with open(fileToOpen, encoding="utf8") as f:
     data = f.read()
 
 soup = BeautifulSoup(data, "lxml")
