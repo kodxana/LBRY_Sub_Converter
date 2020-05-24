@@ -5,7 +5,7 @@ Convert your YouTube subscriptions to LBRY
 To run from source:
 Require: Python 3.7+  
 ```pip install beautifulsoup4``` 
-```git clone https://github.com/BitcoinJake09/LBRY_Sub_Converter```
+```git clone https://github.com/kodxana/LBRY_Sub_Converter```
 ```python LBRYSubConverter.py```  
 
 Requires a YouTube "subscription_manager" file to be in same directory
