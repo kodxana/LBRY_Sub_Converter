@@ -1,10 +1,12 @@
 import os
 import requests
 import json
+import soupsieve
+import pkgutil
 
 from bs4 import BeautifulSoup
 
-
+# Opening the subscription_manager file
 fileToOpen = 'subscription_manager'
 saveFileName = 'LBRY_Subscriptions.txt'
 
@@ -13,9 +15,10 @@ if os.path.exists(saveFileName):
 else:
     append_write = 'w'
 writeLbrySubs = open(saveFileName,append_write)
-with open(fileToOpen, encoding="utf8") as f:
+with open(fileToOpen) as f:
     data = f.read()
 
+# Loading paraser
 soup = BeautifulSoup(data, "lxml")
 
 ids = []
@@ -27,6 +30,7 @@ for node in soup.find_all('outline'):
 
 newids = ','.join(ids)
 print(newids)
+# Create API Call based on list of extracted channel_ids
 resp = requests.get("https://api.lbry.com/yt/resolve?channel_ids={"+newids+"}")
 #url= f'https://api.lbry.com/yt/resolve?channel_ids={'+newids+'}'
 #x = requests.get(url)
