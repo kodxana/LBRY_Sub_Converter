@@ -8,8 +8,8 @@ A download link for YouTube "subscription_manager" can be found at the bottom of
 Place this file in that same folder as program.
 
 # To run from source:
-Require: Python 3.7+  
-```pip install beautifulsoup4``` 
+Require: Python 2.7
+```pip install beautifulsoup4 lxml requests ``` 
 ```git clone https://github.com/kodxana/LBRY_Sub_Converter```
 ```python LBRYSubConverter.py```  
 
